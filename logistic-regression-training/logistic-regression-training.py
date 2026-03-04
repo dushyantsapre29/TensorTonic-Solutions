@@ -22,8 +22,8 @@ def train_logistic_regression(X, y, lr=0.1, steps=1000):
         p = _sigmoid(np.matmul(X, w) + b)
 
         # update params
-        w = w - lr*np.matmul(X.T, (p-y))
-        b = b - lr*np.sum(p-y)
+        w = w - lr*np.matmul(X.T, (p-y))/N
+        b = b - lr*np.sum(p-y)/N
 
     return (w,b)
         
